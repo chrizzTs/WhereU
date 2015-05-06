@@ -1,7 +1,9 @@
 package dhbw.mobile2;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -16,7 +18,7 @@ public class MainScreen extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
-        setUpMapIfNeeded();
+        //setUpMapIfNeeded();
     }
 
     @Override
@@ -61,5 +63,11 @@ public class MainScreen extends FragmentActivity {
      */
     private void setUpMap() {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
+    }
+
+    public void linkDetailEvent(View view){
+        Intent intent = new Intent(this, EventDetailActivity.class);
+        startActivity(intent);
+
     }
 }
