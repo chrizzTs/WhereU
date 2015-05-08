@@ -1,5 +1,6 @@
 package dhbw.mobile2;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -37,6 +38,7 @@ public class CreateEventActivity extends ActionBarActivity {
     }
 
     public void createEvent(){
-
+        Intent intent = new Intent(this, MainScreen.class);
+        startActivity(intent);
     }
 }
