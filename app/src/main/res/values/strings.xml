@@ -12,6 +12,11 @@
     <string name="create_location">Where is it?</string>
     <string name="create_description">What do you do?</string>
     <string name="create_duration">How long do you do it?</string>
-    <string name="create_maxMembers">How many people can participate?</string>
+    <string name="create_maxMembers">How many can participate?</string>
     <string name="create_button">Start the awesome!</string>
+    <string name="create_category">Which category does it belong to?</string>
+    <string name="category1">Sport</string>
+    <string name="category2">Music</string>
+    <string name="category3">Chilling</string>
+    <string name="category4">Drinking</string>
 </resources>
