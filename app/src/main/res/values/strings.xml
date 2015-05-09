@@ -19,4 +19,5 @@
     <string name="category2">Music</string>
     <string name="category3">Chilling</string>
     <string name="category4">Drinking</string>
+    <string name="title_activity_log_in">LogIn</string>
 </resources>

@@ -11,6 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.parse.ParseObject;
+
 
 public class EventDetailActivity extends ActionBarActivity {
     ListView detailListView;
@@ -71,6 +73,7 @@ public class EventDetailActivity extends ActionBarActivity {
         gameScore.put("score", 1337);
         gameScore.put("playerName", "Sean Plott");
         gameScore.put("cheatMode", false);
-        gameScore.saveInBackground();ParseObject gameScore = new ParseObject("GameScore");
+        gameScore.saveInBackground();
+
     }
 }

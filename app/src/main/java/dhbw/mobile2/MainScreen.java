@@ -10,6 +10,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.Parse;
+import com.parse.ParseFacebookUtils;
 import com.parse.ParseObject;
 
 public class MainScreen extends FragmentActivity {
@@ -26,10 +27,8 @@ public class MainScreen extends FragmentActivity {
         // Enable Local Datastore.
         Parse.enableLocalDatastore(this);
         Parse.initialize(this, "XtayL1TkW4GF7OyZPikWIRvdWlr4LrnOs1OjsFCO", "Z29mPZXCfSFlJfk8UcqG6AMouPKgckuzE7sfl2XV");
+        ParseFacebookUtils.initialize(this);
 
-        ParseObject testObject = new ParseObject("TestObject");
-        testObject.put("foo", "bar");
-        testObject.saveInBackground();
 
     }
 
@@ -37,6 +36,8 @@ public class MainScreen extends FragmentActivity {
     protected void onResume() {
         super.onResume();
         setUpMapIfNeeded();
+
+
     }
 
     /**
