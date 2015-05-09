@@ -5,8 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 public class EventDetailActivity extends ActionBarActivity {
@@ -32,6 +35,13 @@ public class EventDetailActivity extends ActionBarActivity {
         detailListView = (ListView) findViewById(R.id.detailListView);
         detailAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, eventDetails);
         detailListView.setAdapter(detailAdapter);
+
+        detailListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(getBaseContext(), parent.getItemIdAtPosition(position)+" is selected", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
@@ -54,5 +64,13 @@ public class EventDetailActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void createExampleEventData(){
+        ParseObject gameScore = new ParseObject("GameScore");
+        gameScore.put("score", 1337);
+        gameScore.put("playerName", "Sean Plott");
+        gameScore.put("cheatMode", false);
+        gameScore.saveInBackground();ParseObject gameScore = new ParseObject("GameScore");
     }
 }
