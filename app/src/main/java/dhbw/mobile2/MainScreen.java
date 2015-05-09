@@ -9,6 +9,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.parse.Parse;
+import com.parse.ParseObject;
 
 public class MainScreen extends FragmentActivity {
 
@@ -19,6 +21,16 @@ public class MainScreen extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         //setUpMapIfNeeded();
+
+        // Set up Parse Connection
+        // Enable Local Datastore.
+        Parse.enableLocalDatastore(this);
+        Parse.initialize(this, "XtayL1TkW4GF7OyZPikWIRvdWlr4LrnOs1OjsFCO", "Z29mPZXCfSFlJfk8UcqG6AMouPKgckuzE7sfl2XV");
+
+        ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo", "bar");
+        testObject.saveInBackground();
+
     }
 
     @Override
