@@ -55,6 +55,14 @@
             android:name=".LogIn"
             android:label="@string/title_activity_log_in" >
         </activity>
+        <activity
+            android:name=".ParticipatorsListActivity"
+            android:label="@string/title_activity_participators_list"
+            android:parentActivityName=".EventDetailActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="dhbw.mobile2.EventDetailActivity" />
+        </activity>
     </application>
 
 </manifest>

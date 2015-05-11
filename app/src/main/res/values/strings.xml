@@ -28,4 +28,6 @@
     <string name="category3">Chilling</string>
     <string name="category4">Drinking</string>
     <string name="title_activity_log_in">LogIn</string>
+    <string name="title_activity_participator_display">ParticipatorDisplayActivity</string>
+    <string name="title_activity_participators_list">ParticipatorsListActivity</string>
 </resources>

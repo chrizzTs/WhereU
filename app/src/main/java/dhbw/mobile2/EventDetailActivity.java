@@ -52,6 +52,7 @@ public class EventDetailActivity extends ActionBarActivity {
     String title;
     ParseUser creator;
     Date creationTime;
+    String eventId;
 
 
     @Override
@@ -91,6 +92,10 @@ public class EventDetailActivity extends ActionBarActivity {
         query.getInBackground("OeJFi71v7F", new GetCallback<ParseObject>() {
             public void done(ParseObject object, ParseException queryException) {
                 if (queryException == null) {
+
+                    eventId = object.getObjectId();
+                    object.pinInBackground();
+
                     category = object.getString("category");
                     TextView detailCategoryDynamic = (TextView) (findViewById(R.id.detail_category_dynamic));
                     detailCategoryDynamic.setText(category);
@@ -112,7 +117,7 @@ public class EventDetailActivity extends ActionBarActivity {
                         creator = object.getParseUser("creator").fetchIfNeeded();
                         String creatorName = creator.getUsername();
                         TextView detailCreatorNameDynamic = (TextView) (findViewById(R.id.detail_creator_dynamic));
-                        detailCreatorNameDynamic.setText("Erstellt durch" + creatorName);
+                        detailCreatorNameDynamic.setText("Erstellt durch " + creatorName);
 
                     } catch (Exception e) {
 
@@ -170,12 +175,17 @@ public class EventDetailActivity extends ActionBarActivity {
                 event.put("duration", "3 hours");
                 event.put("maxMembers", 30);
                 event.put("creator", list.get(0));
-               List<ParseUser> ListParticipators = list;
+                List<ParseUser> ListParticipators = list;
                 event.put("participators", list);
                 event.saveInBackground();
             }
         });
+    }
 
+    public void linkParticipatorList(View view){
+        Intent intent = new Intent(this, ParticipatorsListActivity.class);
+        intent.putExtra("id", eventId);
+        startActivity(intent);
 
     }
 }

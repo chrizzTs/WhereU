@@ -121,7 +121,7 @@
         android:layout_below="@id/detail_creation_time_static"
         android:paddingStart="10sp"
         android:paddingEnd="20sp"/>
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/detail_participators_dynamic"
@@ -129,7 +129,8 @@
         android:layout_toEndOf="@id/detail_participators_static"
         android:layout_alignParentEnd="true"
         android:paddingStart="20sp"
-        android:paddingEnd="10sp"/>
+        android:paddingEnd="10sp"
+        android:onClick="linkParticipatorList"/>
 
 
 </RelativeLayout>
