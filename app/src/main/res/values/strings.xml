@@ -8,8 +8,12 @@
     <string name="title_activity_create_event">CreateEventActivity</string>
 
     //eventDetail
-    <string name="detail_title">Title:</string>
-    <string name="detail_category">Category:</string>
+    <string name="detail_title">Title: </string>
+    <string name="detail_category">Category: </string>
+    <string name="detail_description">Description: </string>
+    <string name="detail_location">Location: </string>
+    <string name="detail_creation_time">Created: </string>
+    <string name="teilnehmer">Teilnehmer:</string>
 
     //CreateEvent
     <string name="create_name">Whats its name?</string>
